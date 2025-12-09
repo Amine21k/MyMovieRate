@@ -49,10 +49,7 @@ app.use(
   })
 );
 
-/* -------------------- FILM + RATINGS/CRITIQUES -------------------- */
-// On route /films vers 2 services possibles :
-//   - Film-Service (4002) pour les films
-//   - Review-Service (4005) pour ratings + critiques
+/* -------------------- FILM + RATINGS/CRITIQUES + CASTING -------------------- */
 app.use(
   "/films",
   createProxyMiddleware({
@@ -60,23 +57,33 @@ app.use(
     target: "http://localhost:4002/films", // défaut : Film-Service
 
     router: (req) => {
-      const fullPath = req.originalUrl || req.url; // ex: /films/1/ratings
+      const fullPath = req.originalUrl || req.url; // ex: /films/1/acteurs/2
 
-      // /films/:id/ratings ou /films/:id/critiques -> review-service
+      // 1) CASTING : /films/:filmId/acteurs ou /films/:filmId/acteurs/:acteurId
+      if (/^\/films\/\d+\/acteurs(\/\d+)?\/?$/.test(fullPath)) {
+        // On garde le path original (/films/1/acteurs/2)
+        // mais on change juste le host/port → actor-service
+        return "http://localhost:4003/films"; // Actor-Service
+      }
+
+      // 2) /films/:id/ratings ou /films/:id/critiques -> review-service
       if (/^\/films\/\d+\/(ratings|critiques)\/?$/.test(fullPath)) {
         return "http://localhost:4005/films"; // Review-Service
       }
 
-      // /films/critiques (liste admin, delete) -> review-service
+      // 3) /films/critiques (liste admin, delete) -> review-service
       if (/^\/films\/critiques(\/.*)?$/.test(fullPath)) {
         return "http://localhost:4005/films";
       }
 
-      // Sinon → Film-Service
+      // 4) Sinon → Film-Service
       return "http://localhost:4002/films";
     },
   })
 );
+
+
+
 /* -------------------- BOT-SERVICE (FastAPI) -------------------- */
 app.use(
   "/bot",
