@@ -1,0 +1,279 @@
+/* ================================
+   TMDB FULLSCREEN THEME
+   ================================ */
+
+.chat-root {
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(180deg, #0d253f 0%, #1e3a5f 45%, #0d253f 100%);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 40px;
+  color: #f1f1f1;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+.chat-overlay {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 24px;
+}
+
+/* ================================
+   HERO
+   ================================ */
+
+.hero-container {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.hero-greeting {
+  font-size: 26px;
+  font-weight: 500;
+  color: #90cea1;
+  margin-bottom: 6px;
+}
+
+.hero-title {
+  font-size: 34px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #01b4e4, #90cea1);
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 22px;
+}
+
+/* Input bar */
+.hero-input-box {
+  margin: 0 auto;
+  max-width: 850px;
+  display: flex;
+  align-items: center;
+  background: #1b2d47;
+  border-radius: 999px;
+  padding: 10px 16px;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.35);
+}
+
+.hero-input-box input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #f1f1f1;
+  font-size: 16px;
+  outline: none;
+}
+
+.hero-input-box button {
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #01b4e4, #90cea1);
+  color: #0d253f;
+  font-weight: 700;
+  width: 46px;
+  height: 46px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Suggestions */
+.hero-suggestions {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.hero-chip {
+  border-radius: 999px;
+  padding: 7px 16px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #f1f1f1;
+  font-size: 14px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+.hero-chip:hover {
+  background: rgba(1,180,228,0.45);
+  border-color: #01b4e4;
+  transform: translateY(-2px);
+}
+
+/* ================================
+   CHAT PANEL
+   ================================ */
+
+.chat-panel {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.chat-messages {
+  width: 100%;
+  max-width: 900px;
+  max-height: 58vh;
+  padding: 20px 18px;
+  border-radius: 26px;
+
+  background: rgba(13, 37, 63, 0.35);
+  backdrop-filter: blur(32px) saturate(180%);
+  border: 1px solid rgba(255,255,255,0.12);
+
+  box-shadow: 0 35px 60px rgba(0,0,0,0.60);
+  overflow-y: auto;
+}
+
+/* ================================
+   CHAT BUBBLES
+   ================================ */
+
+.message-row {
+  display: flex;
+  margin-bottom: 12px;
+}
+
+.message-row.user {
+  justify-content: flex-end;
+}
+
+.bubble {
+  max-width: 70%;
+  padding: 12px 14px;
+  border-radius: 16px;
+  font-size: 15px;
+  line-height: 1.45;
+  animation: fadeUp 0.3s ease;
+  white-space: pre-line;
+}
+
+.message-row.user .bubble {
+  background: #01b4e4;
+  color: #0d253f;
+  font-weight: 600;
+}
+
+.message-row.bot .bubble {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+  backdrop-filter: blur(18px) saturate(170%);
+  color: #e8f5ff;
+}
+
+/* ================================
+   MOVIES CARDS
+   ================================ */
+
+.movie-strip {
+  margin-top: 20px;
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.movie-card {
+  min-width: 180px;
+  scroll-snap-align: start;
+
+  background: rgba(13, 37, 63, 0.55);
+  backdrop-filter: blur(20px);
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(1,180,228,0.30);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.45);
+  animation: fadeIn 0.35s ease;
+  transition: 0.25s ease;
+}
+
+.movie-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.movie-meta {
+  padding: 10px 12px;
+}
+
+.movie-meta h4 {
+  font-size: 15px;
+  margin-bottom: 4px;
+  color: #01b4e4;
+}
+
+.movie-meta p {
+  font-size: 13px;
+  color: #90cea1;
+}
+
+.rating-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 4px;
+}
+
+.star {
+  color: #ffd700;
+  font-size: 17px;
+  text-shadow: 0 0 8px rgba(255,215,0,0.85);
+}
+
+.rating-number {
+  font-size: 14px;
+  color: #f1f1f1;
+  font-weight: 600;
+}
+
+/* Input bottom */
+.chat-bottom-input {
+  margin-top: 16px;
+  display: flex;
+  width: 100%;
+  max-width: 900px;
+  background: #1b2d47;
+  padding: 12px 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.chat-bottom-input input {
+  flex: 1;
+  background: transparent;
+  color: white;
+  border: none;
+  outline: none;
+}
+
+.chat-bottom-input button {
+  background: linear-gradient(135deg, #01b4e4, #90cea1);
+  border: none;
+  padding: 10px 16px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+/* ================================
+   ANIMATIONS
+   ================================ */
+
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(10px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity:0; }
+  to   { opacity:1; }
+}

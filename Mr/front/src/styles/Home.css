@@ -1,0 +1,334 @@
+/* ==========================================
+   HOME PAGE LAYOUT
+========================================== */
+
+.home-page {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ==========================================
+   HERO
+========================================== */
+
+.home-hero-card {
+  margin-top: 20px;
+  margin-bottom: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  background: radial-gradient(circle at top left, #1d4ed8 0, #020617 45%);
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  padding: 20px;
+  border-radius: 16px;
+}
+
+.home-hero-left,
+.home-hero-right {
+  flex: 1 1 280px;
+}
+
+.home-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.home-text {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  max-width: 420px;
+}
+
+.home-stats-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.home-stat-pill {
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  font-size: 0.8rem;
+}
+
+.home-stat-value {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+/* HERO – Search */
+
+.home-hero-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.home-search-wrapper {
+  margin-top: 6px;
+  position: relative;
+}
+
+.home-search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.home-search-input {
+  padding-left: 30px;
+}
+
+.home-search-info {
+  margin-top: 4px;
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.home-quick-links {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.home-chip-link {
+  font-size: 0.8rem;
+  text-decoration: none;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  background: rgba(15, 23, 42, 0.7);
+  transition: background 0.15s ease, transform 0.1s ease,
+    border-color 0.15s ease;
+}
+
+.home-chip-link:hover {
+  background: rgba(37, 99, 235, 0.45);
+  border-color: rgba(59, 130, 246, 0.9);
+  transform: translateY(-1px);
+}
+
+/* ==========================================
+   MAIN GRID
+========================================== */
+
+.home-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.home-column {
+  flex: 1 1 360px;
+}
+
+.home-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+
+.home-section-count {
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+.home-section-link {
+  font-size: 0.8rem;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.home-section-link:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* ==========================================
+   FILMS GRID (6 films avec animations)
+========================================== */
+
+.home-films-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 16px;
+}
+
+/* Animation du container */
+.fade-rotate {
+  animation: fadeRotate 0.6s ease forwards;
+}
+
+@keyframes fadeRotate {
+  0% {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(0) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Carte film (cascade) */
+.home-film-card {
+  background: rgba(15, 23, 42, 0.7);
+  border-radius: 12px;
+  padding: 6px;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  opacity: 0;
+  transform: translateY(15px) scale(0.95);
+  animation: fadeCard 0.6s ease forwards;
+}
+
+.home-film-card:nth-child(1) { animation-delay: 0.05s; }
+.home-film-card:nth-child(2) { animation-delay: 0.10s; }
+.home-film-card:nth-child(3) { animation-delay: 0.15s; }
+.home-film-card:nth-child(4) { animation-delay: 0.20s; }
+.home-film-card:nth-child(5) { animation-delay: 0.25s; }
+.home-film-card:nth-child(6) { animation-delay: 0.30s; }
+
+@keyframes fadeCard {
+  0% {
+    opacity: 0;
+    transform: translateY(15px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Hover */
+.home-film-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9);
+  border-color: #01d277;
+  background: #020818;
+}
+
+/* Poster */
+.home-film-poster-wrapper {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #020617;
+}
+
+.home-film-poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.25s ease-out;
+}
+
+.home-film-card:hover .home-film-poster {
+  transform: scale(1.08);
+}
+
+.home-film-info {
+  padding: 10px 10px 12px;
+}
+
+.home-film-title {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.home-film-meta {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+/* ==========================================
+   ACTEURS LIST
+========================================== */
+
+.home-actors-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.home-actor-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 4px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.home-actor-item:hover {
+  background: rgba(15, 23, 42, 0.9);
+  transform: translateY(-1px);
+}
+
+.home-actor-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: #1f2933;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-actor-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-actor-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.home-actor-sub {
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 900px) {
+  .home-grid {
+    flex-direction: column;
+  }
+
+  .home-hero-card {
+    flex-direction: column;
+  }
+}

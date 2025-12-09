@@ -1,0 +1,112 @@
+/* Badge "note" style cercle TMDB (même si tu ne l'utilises pas encore partout) */
+
+.rating-badge {
+  position: absolute;
+  bottom: 60px;
+  left: 10px;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  border: 3px solid #01d277;
+  background: #032541;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* Inputs & boutons */
+
+.form-card {
+  max-width: 420px;
+  margin: 40px auto;
+}
+
+.label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: 9px 11px;
+  border-radius: 8px;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  background: rgba(15, 23, 42, 0.9);
+  color: #e5e7eb;
+  font-size: 14px;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-color: #01d277;
+  box-shadow: 0 0 0 1px rgba(1, 210, 119, 0.6);
+}
+
+.form-group {
+  margin-bottom: 14px;
+}
+
+.btn-primary {
+  border-radius: 999px;
+  padding: 10px 16px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  background: linear-gradient(to right, #01b4e4, #01d277);
+  color: white;
+  width: 100%;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.05);
+}
+
+/* Film detail layout façon fiche TMDB */
+
+.film-detail-hero {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+@media (min-width: 900px) {
+  .film-detail-hero {
+    flex-direction: row;
+  }
+}
+
+.film-detail-poster {
+  width: 260px;
+  min-width: 220px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.8);
+}
+
+.film-detail-poster img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 2/3;
+  object-fit: cover;
+}
+
+.film-detail-info {
+  flex: 1;
+}
+
+/* Sections */
+
+.section {
+  margin-top: 26px;
+}
+
+.section-title {
+  font-size: 18px;
+  margin-bottom: 8px;
+}

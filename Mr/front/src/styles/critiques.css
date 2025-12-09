@@ -1,0 +1,120 @@
+/* Critiques */
+
+.critique-item {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+}
+
+.critique-meta {
+  font-size: 12px;
+  opacity: 0.75;
+}
+
+/* Loader */
+
+.loader {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(148, 163, 184, 0.4);
+  border-top-color: #01d277;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 30px auto 12px;
+}
+
+.critique-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.critique-count {
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+.critique-list {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.critique-card {
+  display: flex;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+.critique-own {
+  border-color: #01d277;
+  box-shadow: 0 0 0 1px rgba(1, 210, 119, 0.4);
+}
+
+.critique-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  background: #020b16;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 600;
+  color: #e5e7eb;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+}
+
+.critique-body {
+  flex: 1;
+}
+
+.critique-body-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 4px;
+}
+
+.critique-author {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.critique-badge {
+  margin-left: 6px;
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 999px;
+  background: rgba(1, 210, 119, 0.12);
+  color: #01d277;
+}
+
+.critique-date {
+  font-size: 11px;
+  opacity: 0.7;
+}
+
+.critique-text {
+  font-size: 14px;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.btn-critique-delete {
+  margin-top: 6px;
+  font-size: 12px;
+  background: transparent;
+  border-radius: 999px;
+  padding: 4px 10px;
+  border: 1px solid rgba(248, 113, 113, 0.7);
+  color: #fecaca;
+  cursor: pointer;
+}
+
+.btn-critique-delete:hover {
+  background: rgba(248, 113, 113, 0.1);
+}

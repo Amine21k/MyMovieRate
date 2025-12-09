@@ -1,0 +1,314 @@
+.admin-films-page {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* HEADER */
+.admin-films-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 16px auto 10px;
+  border-top: 3px solid #3b82f6;
+}
+
+.admin-subtitle {
+  margin-top: 4px;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.admin-header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.admin-badge {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  background: rgba(59, 130, 246, 0.15);
+  border: 1px solid rgba(59, 130, 246, 0.6);
+}
+
+/* EFFET CARTE */
+.admin-card-elevated {
+  transition: transform 0.15s ease, box-shadow 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.admin-card-elevated:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.45);
+}
+
+/* LAYOUT CONTENU */
+.admin-films-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.admin-form-card {
+  flex: 1 1 340px;
+}
+
+.admin-list-card {
+  flex: 2 1 420px;
+}
+
+/* TITRES SECTIONS */
+.admin-section-title {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+/* INFO EDITION */
+.admin-edit-info {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  margin-bottom: 8px;
+}
+
+/* FORM */
+.admin-form .form-group {
+  margin-bottom: 10px;
+}
+
+.admin-form-row {
+  display: flex;
+  gap: 12px;
+}
+
+.admin-form-row .form-group {
+  flex: 1;
+}
+
+.input-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.admin-form-actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
+}
+
+/* BOUTONS GENERIQUES */
+.btn-ghost {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.btn-ghost:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.btn-small {
+  padding: 4px 8px;
+  font-size: 0.8rem;
+}
+
+/* LISTE / TABLE */
+.admin-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 8px;
+}
+
+.admin-films-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.admin-films-table th,
+.admin-films-table td {
+  padding: 6px 8px;
+  border-bottom: 1px solid #333;
+}
+
+.admin-films-table th {
+  text-align: left;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.admin-films-table tbody tr {
+  transition: background-color 0.15s ease;
+}
+
+.admin-films-table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* Ligne en cours d'édition */
+.row-editing {
+  background: rgba(59, 130, 246, 0.08);
+}
+
+/* COL ACTIONS + BOUTONS DANS LE TABLEAU */
+.col-actions {
+  text-align: right;
+}
+
+/* On aligne les boutons sur une ligne, à droite */
+.admin-films-table .col-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+/* Style des boutons d'action (Modifier / Casting / Supprimer) */
+.admin-films-table .btn {
+  background: transparent;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #f9fafb;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  text-decoration: none; /* pour le <Link> */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease, transform 0.1s ease,
+    border-color 0.15s ease;
+}
+
+.admin-films-table .btn:hover {
+  background: rgba(59, 130, 246, 0.18);
+  border-color: rgba(59, 130, 246, 0.7);
+  transform: translateY(-1px);
+}
+
+/* Bouton "Supprimer" en rouge */
+.admin-films-table .btn.btn-danger {
+  border-color: rgba(239, 68, 68, 0.9);
+  color: #fecaca;
+}
+
+.admin-films-table .btn.btn-danger:hover {
+  background: rgba(239, 68, 68, 0.2);
+}
+
+/* POSTER */
+.poster-cell {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.poster-thumb {
+  width: 40px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.poster-thumb:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.8);
+}
+
+.poster-placeholder {
+  width: 40px;
+  height: 60px;
+  border-radius: 4px;
+  background: #1f2933;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+/* GENRE BADGE */
+.genre-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.5);
+}
+
+/* ERREUR */
+.admin-error {
+  margin: 8px auto;
+  padding: 8px 12px;
+  border-left: 3px solid #f97373;
+}
+
+.admin-error p {
+  margin: 0;
+  color: #f97373;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .admin-films-content {
+    flex-direction: column;
+  }
+
+  .admin-form-card,
+  .admin-list-card {
+    flex: 1 1 100%;
+  }
+}
+/* Toolbar recherche + tri */
+.admin-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.admin-list-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.admin-search-input {
+  min-width: 200px;
+}
+
+.admin-sort-select {
+  max-width: 190px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .admin-list-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .admin-list-toolbar {
+    width: 100%;
+  }
+
+  .admin-search-input,
+  .admin-sort-select {
+    width: 100%;
+  }
+}
