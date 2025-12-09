@@ -1,16 +1,16 @@
 import React, { useState, useRef, useEffect } from "react";
 import "../styles/chatbot.css";
-import api from "../api"; // ✅ on importe ton client Axios (baseURL: http://localhost:4000)
+import api from "../api"; // on importe ton client Axios (baseURL: http://localhost:4000)
 
 export default function ChatbotWidget() {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [suggestions, setSuggestions] = useState([
-    "🎬 List of movies",
-    "⭐ Popular actors",
-    "📈 Top rated movies",
-    "🔍 Search a movie",
+    "🎬 Liste des films",
+    "⭐ Acteurs populaires",
+    "📈 Films les mieux notés",
+    "🔍 Rechercher un film",
   ]);
   const [movies, setMovies] = useState([]);
 
@@ -29,8 +29,7 @@ export default function ChatbotWidget() {
     setLoading(true);
 
     try {
-      // ⚠️ AVANT: fetch("http://127.0.0.1:8000/chat", ...)
-      // ✅ MAINTENANT: on passe par l'API Gateway -> /bot/chat
+    
       const resp = await api.post("/bot/chat", { message: text });
 
       const data = resp.data;
@@ -52,9 +51,10 @@ export default function ChatbotWidget() {
 
   const getGreeting = () => {
     const h = new Date().getHours();
-    if (h < 12) return "Good morning";
-    if (h < 18) return "Good afternoon";
-    return "Good evening";
+     if (h < 12) return "Bonjour";
+     if (h < 18) return "Bonne après-midi";
+    return "Bonsoir";
+
   };
 
   return (
@@ -65,13 +65,13 @@ export default function ChatbotWidget() {
         {messages.length === 0 && (
           <div className="hero-container">
             <p className="hero-greeting">{getGreeting()}</p>
-            <h1 className="hero-title">What can I help you with today?</h1>
+            <h1 className="hero-title">Comment puis-je vous aider aujourd’hui?</h1>
 
             {/* Barre de recherche centrale */}
             <div className="hero-input-box">
               <input
                 type="text"
-                placeholder="Ask anything about MyMovieRate..."
+                placeholder="Posez n’importe quelle question sur MyMovieRate…"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && sendMessage()}
